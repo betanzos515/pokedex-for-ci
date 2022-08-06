@@ -1,17 +1,24 @@
+#nombre de la action
 name: Say Hellow
 
+#le indicamos sobre que accion y en que rama se realizará la acción
 on: 
-  push:
-    branches:
-      - main
+  push: #cuando se haga push
+    branches: 
+      - main #en la rama main
 
+#lista de trabajos
 jobs: 
-  hellow_world:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Echo the message
+  hellow_world:  #nombre del job
+    runs-on: ubuntu-latest #indicamos sobre que maquina lo vamos a correr
+    steps: #los pasos son todos los comandos que se irán ejecutando
+      - name: Echo the message #el nombre es opcional aunque podemos omitirlo y dejar solo el run
         run: |
           echo "Hola mundo!"
+      - name: Dime la fecha #el nombre es opcional aunque podemos omitirlo y dejar solo el run
+        run: date
+      - name: Listar los directorios #el nombre es opcional aunque podemos omitirlo y dejar solo el run
+        run: ls -l
 
       
 
